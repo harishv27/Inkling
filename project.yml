@@ -1,0 +1,63 @@
+name: Inkling
+options:
+  bundleIdPrefix: com.harishv27
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+packages:
+  InklingCore:
+    path: Packages/InklingCore
+targets:
+  Inkling:
+    type: application
+    platform: iOS
+    sources:
+      - path: Inkling
+        excludes:
+          - Info.plist
+    dependencies:
+      - package: InklingCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.harishv27.inkling
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_FILE: Inkling/Info.plist
+        ENABLE_PREVIEWS: YES
+    info:
+      path: Inkling/Info.plist
+      properties:
+        CFBundleDisplayName: Inkling
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        NSFaceIDUsageDescription: Inkling uses Face ID to keep your journal private.
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations: {}
+        ITSAppUsesNonExemptEncryption: false
+schemes:
+  Inkling:
+    build:
+      targets:
+        Inkling: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - package: InklingCore/InklingCoreTests
+    archive:
+      config: Release
