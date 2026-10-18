@@ -16,6 +16,12 @@ server and no network code: your writing never leaves the phone.
 Screenshots use sample entries seeded by a Debug-only launch argument. The editor shows an entry written and summarised
 on the simulator.
 
+## Demo
+
+<img src="docs/demo.gif" alt="Inkling walkthrough" width="260">
+
+Scroll the journal with summaries, then Insights and Settings. Recorded on the iPhone 17 Pro simulator with demo entries. [Full-quality video (MP4)](docs/demo.mp4)
+
 ## What it does
 
 - **Summary, mood and tags** for each entry, written by the Foundation Models framework and returned as a typed
